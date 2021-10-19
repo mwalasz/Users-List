@@ -1,0 +1,9 @@
+.item {
+    color: gray;
+}
+
+.name {
+    font-weight: 700;
+    color: black;
+    padding-right: 10px;
+}
