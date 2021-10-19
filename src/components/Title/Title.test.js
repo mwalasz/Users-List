@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { DEFAULT_TITLE } from '../../utils';
+import { DEFAULT_TITLE } from '../../utils/texts';
 import Title from './Title';
 
 describe('Check title rendering', () => {
