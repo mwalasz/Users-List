@@ -9,10 +9,11 @@ const ListItem = ({ key, username, name }) => (
     </li>
 );
 
-ListItem.propTypes = {
+const ListItemPropTypes = PropTypes.shape({
     key: PropTypes.number,
     username: PropTypes.string,
     name: PropTypes.string,
-};
+});
+ListItem.propTypes = ListItemPropTypes;
 
-export default ListItem;
+export { ListItem, ListItemPropTypes };
