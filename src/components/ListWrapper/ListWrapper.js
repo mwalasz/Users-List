@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import List from './List';
+import List from './List/List';
 import { ALL_USERS } from '../../utils/endoints';
 
 const ListWrapper = ({ searchText }) => {

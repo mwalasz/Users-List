@@ -1,7 +1,7 @@
 import { React } from 'react';
 import PropTypes from 'prop-types';
-import { ListItem, ListItemPropTypes } from './ListItem/ListItem';
-import { EMPTY_LIST, NO_USER_FOUND } from '../../utils/texts';
+import { ListItem, ListItemPropTypes } from '../ListItem/ListItem';
+import { EMPTY_LIST, NO_USER_FOUND } from '../../../utils/texts';
 
 const List = ({ items, isDataFiltered }) => {
     if (items.length > 0) {

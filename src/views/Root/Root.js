@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import Title from '../../components/Title/Title';
-import ListWrapper from '../../components/List/ListWrapper';
+import ListWrapper from '../../components/ListWrapper/ListWrapper';
 import Search from '../../components/Search/Search';
 import './Root.css';
 
