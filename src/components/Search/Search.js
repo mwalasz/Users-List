@@ -4,7 +4,8 @@ import { SEARCH_PLACEHOLDER } from '../../utils/texts';
 const Search = ({ text, onTextChange }) => {
     return (
         <input
-            type="text"
+            className="search"
+            type="search"
             placeholder={SEARCH_PLACEHOLDER}
             value={text}
             onChange={onTextChange}
