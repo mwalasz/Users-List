@@ -18,7 +18,7 @@ const List = ({ items, isDataFiltered }) => {
 };
 
 List.propTypes = {
-    items: PropTypes.arrayOf(ListItemPropTypes),
+    items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
     isDataFiltered: PropTypes.bool.isRequired,
 };
 
