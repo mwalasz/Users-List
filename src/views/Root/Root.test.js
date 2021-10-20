@@ -23,15 +23,15 @@ afterEach(() => {
 
 afterAll(cleanup);
 
-describe('Check main page rendering', () => {
-    test('Display Title', async () => {
+describe('Verify main page rendering', () => {
+    test('It should display Title', async () => {
         await act(async () => {
             render(<Root />);
         });
         expect(screen.getByText(DEFAULT_TITLE)).toBeInTheDocument();
     });
 
-    test('Display Search', async () => {
+    test('It should display Search', async () => {
         await act(async () => {
             render(<Root />);
         });
@@ -40,7 +40,7 @@ describe('Check main page rendering', () => {
         ).toBeInTheDocument();
     });
 
-    test('Display List', async () => {
+    test('It should display List', async () => {
         await act(async () => {
             render(<Root />);
         });

@@ -19,28 +19,30 @@ const listItemTestId = 'item';
 
 afterAll(cleanup);
 
-describe('Check title rendering', () => {
-    test('Display list with users with no filtration', async () => {
+describe('Verify List component', () => {
+    test('It should display complete list without filtration', async () => {
         render(<List items={users} isDataFiltered={false} />);
 
         const listContent = await screen.findAllByTestId(listItemTestId);
         expect(listContent).toHaveLength(2);
     });
 
-    test('Display list with users with filtration', async () => {
+    test('It should display complete list with filtration', async () => {
         render(<List items={users} isDataFiltered={true} />);
 
         const listContent = await screen.findAllByTestId(listItemTestId);
         expect(listContent).toHaveLength(2);
     });
 
-    test('Display empty list with no filtration', () => {
+    test('It should display empty list without filtration', () => {
         render(<List items={[]} isDataFiltered={false} />);
+
         expect(screen.getByText(EMPTY_LIST)).toBeInTheDocument();
     });
 
-    test('Display empty list with filtration', () => {
+    test('It should display empty list with filtration', () => {
         render(<List items={[]} isDataFiltered={true} />);
+
         expect(screen.getByText(NO_USER_FOUND)).toBeInTheDocument();
     });
 });

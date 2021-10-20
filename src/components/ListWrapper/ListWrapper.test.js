@@ -29,7 +29,7 @@ afterEach(() => {
 afterAll(cleanup);
 
 describe('Tests of list filtration', () => {
-    test('Find all users', async () => {
+    test('It should find all users', async () => {
         render(<ListWrapper searchText={''} />);
 
         const listContent = await screen.findAllByTestId('item');
@@ -38,7 +38,7 @@ describe('Tests of list filtration', () => {
         expect(screen.getByText('Adam Nowak')).toBeInTheDocument();
     });
 
-    test('Find one user', async () => {
+    test('It should find one user', async () => {
         render(<ListWrapper searchText={'adam'} />);
 
         const listContent = await screen.findAllByTestId('item');
@@ -46,7 +46,7 @@ describe('Tests of list filtration', () => {
         expect(screen.getByText('Adam Nowak')).toBeInTheDocument();
     });
 
-    test('Find one user with not matching mixed case', async () => {
+    test('It should find one user with not matching mixed case', async () => {
         render(<ListWrapper searchText={' KoWaLs'} />);
 
         const listContent = await screen.findAllByTestId('item');
@@ -54,7 +54,7 @@ describe('Tests of list filtration', () => {
         expect(screen.getByText('Jan Kowalski')).toBeInTheDocument();
     });
 
-    test('No user found', async () => {
+    test('It should find no users', async () => {
         await act(async () => {
             render(<ListWrapper searchText={'abcdef'} />);
         });
@@ -63,10 +63,10 @@ describe('Tests of list filtration', () => {
         expect(listContent).toHaveLength(0);
     });
 
-    test('Connection error', async () => {
+    test('It should handle connection error', async () => {
         const fetchError = jest
             .spyOn(global, 'fetch')
-            .mockRejectedValueOnce('Timeout');
+            .mockRejectedValueOnce('Timeout error');
         const windowAlert = jest
             .spyOn(window, 'alert')
             .mockImplementationOnce(jest.fn());

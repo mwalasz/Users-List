@@ -2,21 +2,23 @@ import { render, screen } from '@testing-library/react';
 import { DEFAULT_TITLE } from '../../utils/texts';
 import Title from './Title';
 
-describe('Check title rendering', () => {
-    test('Default title', () => {
+describe('Verfify Title component', () => {
+    test('It should display default title', () => {
         render(<Title />);
+
         expect(screen.getByText(DEFAULT_TITLE)).toBeInTheDocument();
     });
 
-    test('Custom title', () => {
+    test('It should display custom title', () => {
         const text = 'This is custom title';
         render(<Title text={text} />);
+
         expect(screen.getByText(text)).toBeInTheDocument();
     });
 
-    test('Empty custom title', () => {
+    test('It should display default title when no custom one is provided', () => {
         render(<Title text={''} />);
-        screen.debug();
+
         expect(screen.getByText(DEFAULT_TITLE)).toBeInTheDocument();
     });
 });
