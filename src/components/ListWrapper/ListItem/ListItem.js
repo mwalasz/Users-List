@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './ListItem.css';
 
 const ListItem = ({ id, username, name }) => (
-    <li key={id} className="item">
+    <li key={id} className="item" data-testid="item">
         <span className="name">{name}</span>
         <span>{`@${username}`}</span>
     </li>

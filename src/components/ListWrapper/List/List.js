@@ -6,7 +6,7 @@ import { EMPTY_LIST, NO_USER_FOUND } from '../../../utils/texts';
 const List = ({ items, isDataFiltered }) => {
     if (items.length > 0) {
         return (
-            <ol>
+            <ol data-testid="list">
                 {items.map(({ id, name, username }) => (
                     <ListItem key={id} username={username} name={name} />
                 ))}
